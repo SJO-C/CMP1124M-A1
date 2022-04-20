@@ -1,0 +1,15 @@
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\bin\Debug\net6.0\CMP1124MA1.exe
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\bin\Debug\net6.0\CMP1124MA1.deps.json
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\bin\Debug\net6.0\CMP1124MA1.runtimeconfig.json
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\bin\Debug\net6.0\CMP1124MA1.dll
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\bin\Debug\net6.0\CMP1124MA1.pdb
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.csproj.AssemblyReference.cache
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.AssemblyInfoInputs.cache
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.AssemblyInfo.cs
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.csproj.CoreCompileInputs.cache
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.dll
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\refint\CMP1124MA1.dll
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.pdb
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\CMP1124MA1.genruntimeconfig.cache
+C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\CMP1124MA1\obj\Debug\net6.0\ref\CMP1124MA1.dll
