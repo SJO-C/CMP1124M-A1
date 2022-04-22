@@ -3,20 +3,9 @@ using System.Linq;
 
 class Program
 {
-    public int[] Recast2Ints (List <string> sharesUSortedStr)
-    {
-        int[] result = new int[] { };
-        List<int> list = sharesUSortedStr.ConvertAll<int>(s => Int32.Parse(s));
-
-        //for (int i = 0; i < sharesUSortedStr.Length; i++)
-        //{
-        //    result[i] = Int32.Parse(sharesUSortedStr[i]);
-        //}
-
-        return result;
-    }
     
-    static void Main()
+    
+    public static void Main()
     {
         //Console.WriteLine("Shares_1_256");
         // String[] strShare1256 = System.IO.File.ReadAllLines(@"C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\Share_1_256.txt");
@@ -37,10 +26,35 @@ class Program
         //    Console.WriteLine(str);
         //}
 
-        List <string> shares1_256 = System.IO.File.ReadAllLines(@"./shares_1_256.txt")
 
+        string[] shares1_256 = System.IO.File.ReadAllLines(@"./Share_1_256.txt");
+        int[] arry1 = Recast2Ints(shares1_256);
+        Console.WriteLine(arry1);
 
         Console.WriteLine();
         Console.ReadKey();
+    }
+
+    public static int[] Recast2Ints(string[] sharesUSortedStr)
+    {
+        int[] result = Array.ConvertAll(sharesUSortedStr, (s) => Int32.Parse(s));
+
+        //List<int> list = sharesUSortedStr.ConvertAll<int>(s => Int32.Parse(s));
+
+        //for (int i = 0; i < sharesUSortedStr.Length; i++)
+        //{
+        //    result[i] = Int32.Parse(sharesUSortedStr[i]);
+        //}
+
+        return result;
+    }
+
+    public static int[] QuickSort(int[] sharesData)
+    {
+        
+
+
+
+
     }
 }
