@@ -1,16 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Linq;
+
 class Program
 {
-    public Int32[] Recast2Ints (List<String> sharesUSortedStr)
+    public int[] Recast2Ints (string[] sharesUSortedStr)
     {
-        Int32[] result = new Int32[sharesUSortedStr.Count];
-        int tempCounter = 0;
-        foreach (String i in sharesUSortedStr)
+        int[] result = new int[] { };
+
+        for (int i = 0; i < sharesUSortedStr.Length; i++)
         {
-            
-            result[tempCounter] = Int32.Parse(i);
-            tempCounter++;
+            result[i] = Int32.Parse(sharesUSortedStr[i]);
         }
+
         return result;
     }
     
@@ -35,8 +36,8 @@ class Program
         //    Console.WriteLine(str);
         //}
 
-        String [] strShare1_256 = System.IO.File.ReadAllLines(@"C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\Share_1_256.txt");
-        Int32[] shares1256USortedStr = Recast2Ints(strShare1_256.ToList());
+        string[] strShare1_256 = System.IO.File.ReadAllLines(@"C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\Share_1_256.txt");
+        int[] shares1256USortedStr = Recast2Ints(strShare1_256);
 
 
         Console.WriteLine();
