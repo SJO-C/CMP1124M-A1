@@ -3,14 +3,15 @@ using System.Linq;
 
 class Program
 {
-    public int[] Recast2Ints (string[] sharesUSortedStr)
+    public int[] Recast2Ints (List <string> sharesUSortedStr)
     {
         int[] result = new int[] { };
+        List<int> list = sharesUSortedStr.ConvertAll<int>(s => Int32.Parse(s));
 
-        for (int i = 0; i < sharesUSortedStr.Length; i++)
-        {
-            result[i] = Int32.Parse(sharesUSortedStr[i]);
-        }
+        //for (int i = 0; i < sharesUSortedStr.Length; i++)
+        //{
+        //    result[i] = Int32.Parse(sharesUSortedStr[i]);
+        //}
 
         return result;
     }
@@ -36,8 +37,7 @@ class Program
         //    Console.WriteLine(str);
         //}
 
-        string[] strShare1_256 = System.IO.File.ReadAllLines(@"C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\Share_1_256.txt");
-        int[] shares1256USortedStr = Recast2Ints(strShare1_256);
+        List <string> shares1_256 = System.IO.File.ReadAllLines(@"./shares_1_256.txt")
 
 
         Console.WriteLine();
