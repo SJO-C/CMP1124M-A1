@@ -49,9 +49,55 @@ class Program
         return result;
     }
 
+    public static int[] LinearSearch(int searchDatum, int[] arraySearched)
+    {
+        int stepsTaken = 0;
+        int foundPos = 0;
+
+        foreach (int i in arraySearched)
+        {
+            stepsTaken++;
+            if (searchDatum == i)
+            {
+                foundPos = i;
+                break;
+            }
+            else
+            {
+                foundPos = -1;
+                break;
+            }
+
+        }
+        int[] LsOutput = new int[2];
+        LsOutput.Append<int>(foundPos);
+        LsOutput.Append<int>(stepsTaken);
+        return LsOutput;
+    }
+
+
     public static int[] QuickSort(int[] sharesData)
     {
-        
+        int stepsTaken = 0;
+        int sortPoint1 = 1;
+        int sortPoint2 = sharesData.Length - 1;
+        bool sorted = false;
+        int tempVar;
+        while (sorted == false)
+        {
+            stepsTaken++;
+
+            int pivot = sharesData[0];
+            if (sharesData[sortPoint1] > sharesData[sortPoint2])
+            {
+                tempVar = sharesData[sortPoint2];
+                sharesData[sortPoint2] = sharesData[sortPoint1];
+                sharesData[sortPoint1] = tempVar;
+            }
+            else { sorted = true; }
+            sortPoint1++;
+            sortPoint2--;
+        }
 
 
 
