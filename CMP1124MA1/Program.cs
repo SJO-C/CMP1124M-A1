@@ -28,11 +28,53 @@ class Program
 
 
         string[] shares1_256 = System.IO.File.ReadAllLines(@"./Share_1_256.txt");
+        string[] shares2_256 = System.IO.File.ReadAllLines(@"./Share_2_256.txt");
+        string[] shares3_256 = System.IO.File.ReadAllLines(@"./Share_3_256.txt");
         int[] arry1 = Recast2Ints(shares1_256);
-        Console.WriteLine(arry1);
+        int[] arry2 = Recast2Ints(shares2_256);
+        int[] arry3 = Recast2Ints(shares3_256);
+        Console.WriteLine("The first values of each unsorted array:");
+        //Console.WriteLine(arry1[255] + " " + arry2[255] + " " + arry2[255] + " ");
+        Console.Write("Select the array you want to search: 1, 2 or 3 ONLY.\n> ");
+        string strUserChoice = Console.ReadLine();
+        int intUserChoice = 0;
+        try
+        {
+             intUserChoice = System.Convert.ToInt32(strUserChoice);
+        }
+        catch (ArgumentNullException)
+        {
+            ;
+            
+        }
+
+        int[] arryChoice = new int[258];
+        
+        if (intUserChoice == 1)
+        {
+            arryChoice = arry1;
+        }
+        else if (intUserChoice == 2)
+        {
+            arryChoice = arry2;
+        }
+        else if (intUserChoice == 3)
+        {
+            arryChoice = arry3;
+        }
+        else
+        {
+            ;
+        }
+        //Console.WriteLine(arryChoice);
+        Console.Write("Enter your number to search for using a Linear Search.> ");
+        int intUserFind = System.Convert.ToInt32(Console.ReadLine());
+        int findWlLinear = LinearSearch(intUserFind, arryChoice);
+        //Console.Beep();
+        
 
         Console.WriteLine();
-        Console.ReadKey();
+        //Console.ReadKey();
     }
 
     public static int[] Recast2Ints(string[] sharesUSortedStr)
@@ -49,30 +91,47 @@ class Program
         return result;
     }
 
-    public static int[] LinearSearch(int searchDatum, int[] arraySearched)
+    public static int LinearSearch(int searchDatum, int[] arraySearched)
     {
         int stepsTaken = 0;
-        int foundPos = 0;
+        int[] posLocates = new int[258];
+        
 
         foreach (int i in arraySearched)
         {
-            stepsTaken++;
+            //Console.WriteLine(i);
+            
             if (searchDatum == i)
             {
-                foundPos = i;
-                break;
+                Console.WriteLine("Found in List.");
+                posLocates[stepsTaken] = 1; 
             }
             else
             {
-                foundPos = -1;
-                break;
+                //Console.WriteLine("Not Found.");
+                posLocates[stepsTaken] = 0;
             }
+            stepsTaken = stepsTaken + 1;
 
+            //Console.WriteLine(stepsTaken);
         }
-        int[] LsOutput = new int[2];
-        LsOutput.Append<int>(foundPos);
-        LsOutput.Append<int>(stepsTaken);
-        return LsOutput;
+        //foreach (int i in posLocates)
+        //{
+        //    Console.WriteLine(i);
+        //}
+
+        int foundPoss = posLocates.Where(p => p == 1).Count();
+        Console.WriteLine("Found in " + foundPoss + " location(s).");
+
+        bool posFinders = false;
+        int[] listOfPos;
+
+        while (posFinders == false)
+        {
+            
+        }
+
+        return 1;
     }
 
 
@@ -97,9 +156,11 @@ class Program
             else { sorted = true; }
             sortPoint1++;
             sortPoint2--;
+            sharesData.Append(stepsTaken);
+            return sharesData;
         }
 
-
+        return sharesData;
 
 
     }
