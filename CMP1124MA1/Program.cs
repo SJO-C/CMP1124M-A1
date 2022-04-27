@@ -7,25 +7,7 @@ class Program
     
     public static void Main()
     {
-        //Console.WriteLine("Shares_1_256");
-        // String[] strShare1256 = System.IO.File.ReadAllLines(@"C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\Share_1_256.txt");
-        //foreach (String str in strShare1256)
-        //{
-        //    Console.WriteLine(str);
-        //}
-        //Console.WriteLine("Shares_2_256");
-        //String[] strShare2256 = System.IO.File.ReadAllLines(@"C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\Share_2_256.txt");
-        //foreach (String str in strShare1256)
-        //{
-        //    Console.WriteLine(str);
-        //}
-        //Console.WriteLine("Shares_3_256");
-        //String[] strShare3256 = System.IO.File.ReadAllLines(@"C:\Users\samue\OneDrive - University of Lincoln\Lectures\AlgoComplex-Y1\Assess-1\Share_3_256.txt");
-        //foreach (String str in strShare1256)
-        //{
-        //    Console.WriteLine(str);
-        //}
-
+        
 
         string[] shares1_256 = System.IO.File.ReadAllLines(@"./Share_1_256.txt");
         string[] shares2_256 = System.IO.File.ReadAllLines(@"./Share_2_256.txt");
@@ -65,6 +47,23 @@ class Program
         else
         {
             ;
+        }
+        Console.WriteLine("QuickSort will commence...\nIn  ascending order:");
+
+        int[] sortedD = QuickSort(arryChoice);
+        for (int D = 0; D <= 256; D = D + 10)
+        {
+            Console.WriteLine(sortedD[D]);
+        }
+        int[] revSortedD = new int[256];
+        for (int E = sortedD.Length - 1; E >= 0; E--)
+        {
+            revSortedD[E] = sortedD[E];
+        }
+        Console.WriteLine("In descending order:");
+        foreach(int F in revSortedD)
+        {
+            Console.WriteLine(F);
         }
         //Console.WriteLine(arryChoice);
         Console.Write("Enter your number to search for using a Linear Search.> ");
