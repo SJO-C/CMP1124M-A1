@@ -163,6 +163,10 @@ class Program
             }
         }
         Console.WriteLine("This took " + stepsTaKen + " to complete.");
+        foreach (int k in sharesData)
+        {
+            Console.WriteLine(k);
+        }
         return sharesData;
     }
 
@@ -192,6 +196,10 @@ class Program
             sharesData.Append(stepsTaken);
             return sharesData;
             iter++;
+        }
+        foreach (int k in sharesData)
+        {
+            Console.WriteLine(k);
         }
 
         return sharesData;
