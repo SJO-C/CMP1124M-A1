@@ -48,9 +48,21 @@ class Program
         {
             ;
         }
-        Console.WriteLine("QuickSort will commence...\nIn  ascending order:");
 
-        int[] sortedD = QuickSort(arryChoice);
+        Console.WriteLine("For BubbleSort press B, for a QuickSort that doesn't work in the slightest, press Q.");
+
+        ConsoleKeyInfo m = Console.ReadKey();
+        int[] sortedD = arryChoice;
+        if (m.Key == ConsoleKey.B)
+        {
+            sortedD = BubbleSort(arryChoice);
+        }
+        else if (m.Key == ConsoleKey.Q)
+        {
+            sortedD = QuickSort(arryChoice);
+        }
+        else { Environment.Exit(0); }
+
         for (int D = 0; D <= 256; D = D + 10)
         {
             Console.WriteLine(sortedD[D]);
@@ -61,9 +73,9 @@ class Program
             revSortedD[E] = sortedD[E];
         }
         Console.WriteLine("In descending order:");
-        foreach(int F in revSortedD)
+        for (int F = 0; F <= 256; F = F + 10)
         {
-            Console.WriteLine(F);
+            Console.WriteLine(revSortedD[F]);
         }
         //Console.WriteLine(arryChoice);
         Console.Write("Enter your number to search for using a Linear Search.> ");
@@ -133,19 +145,41 @@ class Program
         return 1;
     }
 
+    public static int[] BubbleSort(int[] sharesData)
+    {
+        int stepsTaKen = 0;
+        int arryLen = sharesData.Length;
+        for (int iter2 = 0; iter2 < arryLen -1; iter2++)
+        {
+            for (int iter3 = 0; iter3 < arryLen - iter2 - 1; iter2++)
+            {
+                if (sharesData[iter3] > sharesData[iter3 + 1])
+                {
+                    stepsTaKen++;
+                    int tempVar = sharesData[iter3];
+                    sharesData[iter3] = sharesData[iter3 + 1];
+                    sharesData[iter3 + 1] = tempVar;
+                }
+            }
+        }
+        Console.WriteLine("This took " + stepsTaKen + " to complete.");
+        return sharesData;
+    }
 
     public static int[] QuickSort(int[] sharesData)
     {
         int stepsTaken = 0;
-        int sortPoint1 = 1;
-        int sortPoint2 = sharesData.Length - 1;
+        int sortPoint1 = 0;
+        int iter = 0;
+        int sortPoint2 = sharesData.Length -1;
         bool sorted = false;
         int tempVar;
+        int pivot = sharesData[0];
         while (sorted == false)
         {
             stepsTaken++;
-
-            int pivot = sharesData[0];
+            pivot = sharesData[iter];
+            
             if (sharesData[sortPoint1] > sharesData[sortPoint2])
             {
                 tempVar = sharesData[sortPoint2];
@@ -157,6 +191,7 @@ class Program
             sortPoint2--;
             sharesData.Append(stepsTaken);
             return sharesData;
+            iter++;
         }
 
         return sharesData;
