@@ -1,0 +1,91 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+\usepackage[backend=bibtex,style=bath]{biblatex}
+\usepackage{hyperref}
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Algorithms \& Complexity: Assessment I}
+\author{Samuel J. Orman-Chan (25659005)}
+\date{\today} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\bibliography{writeup.bib}
+\begin{document}
+\maketitle
+\tableofcontents
+\vfill
+\begin{center}Created Using \LaTeX.\end{center}
+\newpage
+\section{Design}
+In the beginning, there was nothing.~~\par 
+Then there was code.~~\par 
+The code was full of logic errors and was only capable of returning the 10\textsuperscript{th} (with an offset of +1) values of the unsorted arrays.~~I am unable to comprehend why and therefore the algorithms are implemented but only linear search partially works but is unable to return the indexes. It was however, able to provide a count of the number of times an number was found in the array extracted from the text file.~~The program does however contain code to provide a QuickSort, a Bubble Sort \& a Linear Search.~~ Despite this, none, except the Linear Search are nearly functional.\par
+The Bubble Sort Code was based on the code found here\autocite[1]{unknown_bubble_2014}.~~However it did not succeed in returning the sorted data. This was most likely a logic error owing to my poor understanding of the OOP paradigm.~~Despite this, the code for the Bubble Sort algorithm itself does look as if it should work properly, meaning that the issue lies in the support code to make the algorithm usable.~~The user interface is based around keyboard inputs, with the user having to press RETURN after selecting the file they wish to sort \& search.~~However in the program, the file paths are hard-coded and the program assumes that the files will always remain at the same paths.~~This may lead to crashes if the file names or paths are changed however handling these kind of errors I feel is outside the scope of the program. \par
+On the QuickSort side of things, I cannot tell if it works at all.~~This is as the code was not successfully returning the array sorted. Instead it just output the inputted array, apparently unchanged.~~My QuickSort was based laregly on pseudocode found on \autocite[1]{noauthor_quicksort_2022}.~~This meant that likely, I made many errors in the understanding and subsequent implementation of the code. In part as I used the 1\textsuperscript{st} value as my partition.\par
+The process of implementation was difficult and the outputs were evidently wrong.~~However, the file reading seemed to work fine, with all three files being properly read into their respective arrays without issue.~~This was achieved using a small helper function to convert the data provided by the ``ReadAllLines'' function into an integer array.~~This functioned via the use of the ``Array.ConvertAll'' and the ``Int32.Parse'' functions built into C\#.~~This component was the only functional part of the whole program that I could see.\par
+The outputting of every 10\textsuperscript{th} value was achieved with a for loop with a step of 10.~~This part worked however, it was not outputting the sorted array, as noted previously.~~
+\newpage
+\section{Algorithm Choices and Results}
+The Algorithms were chosen primarily based on ease of implementation.~~This is as I struggled with the C\# language and as such, felt that simpler algorithms would make life a little easier.~~I chose to implement two sorting algorithms, QuickSort \& Bubble Sort.~~However owing to problems with the program, I am unable to provide data on how many steps each algorithm takes to process an array of data and subsequently sort it.~~Therefore any information regarding these algorithms will be based entirely off descriptions found in other works as to their respective efficiencies.~~A consequence of this issue is that tables cannot be provided as the program would only return 1 for the number of steps taken, a glaring logic error. I speculate this may be down to issue with namespaces however I am not entirely certain.~~\par
+What I can say is that the program is non-functional, and as a result, time and space efficiency are difficult to find.~~I can however comment that the Linear search did seem rather slow to run but as I cannot provide proper time data, I cannot corroborate this and this is entirely subjective.~~Despite this or rather owing to this issue, I can provide big O notation information from other sources. According to \autocite[1]{dorantes_quicksort_2022}, the QuickSort algorithm should have a time complexity of $\Omega(\log_n)$ at best and at worse a time complexity of $O(n^2)$.~~The Bubble Sort on the other hand, would be expected to have at worst time complexity of $O(n^2)$ and at best a complexity of $\Omega(n)$.~~Meaning that, the QuickSort would in theory be typically a more time efficient algorithm to use.\par
+The Linear Search would be expected to have a best case time complexity of $\Omega(1)$ and at worst $O(n)$. On average, a linear search would be assumed to an average efficiency of $\Theta(\frac{n+1}{2})$.\autocite[1]{noauthor_linear_2022}.~~\par
+Part of the intention with the Linear Search was to have a quick to implement example of a Searching Algorithm as well as one that could work with unsorted or duplicate data.~~Therefore resulting in the selection of Linear Search as a search algorithm.~~Despite these benefits, Linear Search is a very inefficient algorithm by most standards as referred to above with its $O(n)$ time complexity.~~\par
+
+
+\newpage
+\section{References}
+
+\printbibliography
+
+\end{document}
